@@ -11,7 +11,7 @@ nav {
 	left: 0;
 	right: 0;
 	height: 6rem;
-	background: var(--base-colour);
+	background: var(--low-colour);
 	border-top: var(--main-border);
 
 	@media screen and (min-width: $tablet) {
@@ -19,6 +19,7 @@ nav {
 		gap: calc(var(--space-double) * 2);
 		position: sticky;
 		top: 0;
+		background: var(--base-colour);
 		border-top: none;
       	border-bottom: var(--main-border);
 	}
