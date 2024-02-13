@@ -1,0 +1,9 @@
+@import '../../sass.scss';
+
+main {
+	margin: auto;
+
+    @media screen and (min-width: $tablet) {
+		margin: var(--space-double) auto;
+	}
+}

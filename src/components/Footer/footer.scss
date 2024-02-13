@@ -1,0 +1,20 @@
+@import '../../sass.scss';
+
+footer {
+	position: relative;
+	min-height: 10rem;
+	margin: 16rem auto 0 auto;
+	padding: var(--space-single);
+	background: var(--fade-colour);
+	border-top: var(--main-border);
+
+	.container {
+		max-width: var(--max-width);
+	}
+
+	p {
+		margin: 0;
+		padding: 0;
+		font-size: 1.2rem;
+	}
+}

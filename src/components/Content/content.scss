@@ -1,0 +1,94 @@
+@import '../../sass.scss';
+
+main {
+	.container {
+		box-sizing: border-box;
+
+		@media screen and (min-width: $tablet) {
+			padding: var(--space-single) 0;
+
+			.content {
+				margin-top: -1.6rem;
+			}
+		}
+
+		@media screen and (min-width: $desktop) {
+			background: var(--base-colour);
+
+			.content {
+				margin-top: var(--space-single);
+			}
+
+			&:not(:first-child) {
+				.content {
+					margin-top: -1.6rem;
+				}
+			}
+		}
+	}
+
+	.content {
+		position: relative;
+		max-width: calc(100vw - var(--space-double));
+		margin: var(--space-single) auto;
+		padding: var(--space-double) var(--space-single);
+		padding-bottom: calc(var(--space-double) * 2);
+		box-sizing: border-box;
+		background: var(--fade-colour);
+		border-top-left-radius: var(--space-double);
+		@include pie;
+
+		@media screen and (min-width: $tablet) {
+			max-width: calc(100vw - (var(--space-double) * 2));
+			padding: calc(var(--space-double) * 2);
+			padding-top: var(--space-double);
+		}
+	
+		@media screen and (min-width: $desktop) {
+			width: var(--main-width);
+
+			&.decal {
+				@include decal('burst-gold', 12rem);
+			}
+
+			&.line-out {
+				&::before,
+				&::after {
+					display: block;
+					content: '';
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					width: 100%;
+					height: 0.1rem;
+					margin: auto;
+					background: var(--high-colour);
+				}
+
+				&::before {
+					left: -100%;
+				}
+
+				&::after {
+					right: -100%;
+				}
+			}
+		}
+	}
+
+	h2,
+	h3 {
+		margin: 0 auto var(--space-double) auto;
+		padding: 0;
+	}
+
+	h3 {
+		font-size: 2rem;
+	}
+
+	p {
+		margin: var(--space-single) auto;
+		line-height: 1.8;
+		text-align: left;
+	}
+}

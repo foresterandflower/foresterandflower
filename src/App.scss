@@ -1,0 +1,128 @@
+@import './sass.scss';
+
+body {
+  margin: auto;
+  padding-bottom: 5rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-size: 1.6rem;
+  text-align: center;
+
+	@media screen and (min-width: $tablet) {
+		padding: 0;
+	}
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  --base-colour: #111;
+  --font-colour: #9c9c7d;
+  --font-colour-second: #c9c9b0;
+  --high-colour: #86002c;
+  --high-colour-second: #fff;
+  --mid-colour: #111;
+  --low-colour: #000;
+  --fade-colour: #151515;
+  --line-colour: var(--high-colour);
+
+  --title-font: 'Playfair Display', serif;
+  --main-font: 'Lora', serif;
+
+  --main-border: 1px solid var(--line-colour);
+
+  --main-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.3);
+
+  --space-single: 1.6rem;
+  --space-double: calc(var(--space-single) * 2);
+
+  --main-width: 80rem;
+  --max-width: 120rem;
+
+  font-family: var(--main-font);
+  font-weight: 400;
+  color: var(--font-colour);
+  background: var(--base-colour);
+}
+
+button,
+input[type=submit] {
+  cursor: pointer;
+  color: var(--font-colour);
+  border: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--title-font);
+  font-weight: 600;
+	text-transform: uppercase;
+}
+
+h2, h3, h4, h5, h6 {
+	width: auto;
+	@include underline(0.3rem, var(--mid-colour));
+}
+
+a {
+  color: var(--font-colour);
+	text-decoration: none;
+
+  &:not(.button) {
+    @include anchor(0.2rem, var(--fade-colour), var(--line-colour));
+  }
+}
+
+p {
+  text-align: left;
+
+  a {
+    font-weight: 700;
+    color: var(--high-colour);
+  }
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.small {
+  font-size: 1.2rem;
+}
+
+.large {
+  font-size: 2rem;
+}
+
+.centre {
+  text-align: center;
+}
+
+.highlight {
+  color: var(--high-colour-second);
+
+  span {
+    color: var(--font-colour);
+  }
+}
+
+.pad-bottom {
+  padding-bottom: var(--space-double);
+}
+
+.app {
+  &.light {
+    h2, h3, h4, h5, h6 {
+      font-weight: 800;
+    }
+
+    .highlight {
+      color: var(--font-colour);
+
+      span {
+        color: var(--font-colour);
+      }
+    }
+  }
+}

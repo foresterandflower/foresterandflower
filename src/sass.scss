@@ -1,0 +1,74 @@
+
+$tablet: 900px;
+$desktop: 1200px;
+$wide: 1600px;
+
+@mixin sandwich {
+	border-top: var(--main-border);
+	border-bottom: var(--main-border);
+}
+
+@mixin pie {
+	border: var(--main-border);
+}
+
+@mixin underline($line-height, $line-colour) {
+	display: inline-block;
+
+	&::after {
+		display: block;
+		content: '';
+		width: 100%;
+		height: $line-height;
+		position: relative;
+		bottom: 0;
+		background: $line-colour;
+		transition: 0.3s;
+	}
+}
+
+@mixin anchor($line-height, $line-colour, $hover-colour) {
+	@include underline($line-height, $line-colour);
+
+	&:hover,
+	&:active,
+	&.is-active {
+		&::after {
+			background-color: $hover-colour;
+		}
+	}
+}
+
+@mixin decal($image, $dimension) {
+	&::before,
+    &::after {
+      display: block;
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: $dimension;
+      height: $dimension;
+      margin: auto;
+      background: url('./components/svg/#{$image}.svg') no-repeat center/contain;
+    }
+
+    &::before {
+      left: calc(0rem - (#{$dimension} + var(--space-single)));
+      transform: rotate(180deg);
+    }
+
+    &::after {
+      right: calc(0rem - (#{$dimension} + var(--space-single)));
+    }
+}
+
+@mixin decal-inside {
+    &::before {
+      left: var(--space-single);
+    }
+
+    &::after {
+      right: var(--space-single);
+    }
+}

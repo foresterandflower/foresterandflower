@@ -1,0 +1,43 @@
+@import '../../sass.scss';
+
+.button {
+	display: inline-block;
+	position: relative;
+	padding: 0.8rem calc(var(--space-double) + var(--space-single));
+	font-family: var(--title-font);
+	font-size: 2.4rem;
+	font-weight: 800;
+	text-shadow: 0.075rem 0.1rem 0 var(--base-colour);
+	color: var(--font-colour-second);
+	background: var(--high-colour);
+	border-top-left-radius: var(--space-single);
+	border-bottom-right-radius: var(--space-single);
+	box-shadow: 0.2rem 0.2rem 0.2rem 0 var(--base-colour);
+	transition: 0.3s;
+
+	@include decal('bang-white', 2rem);
+	@include decal-inside;
+
+	&:active {
+		transform: translate(0.2rem, 0.2rem);
+		box-shadow: none;
+	}
+
+	&:hover {
+		background: var(--mid-colour);
+	}
+}
+
+.app {
+	&.light {
+		.button {
+			background: var(--high-colour-muted);
+			@include decal('bang-black', 2rem);
+			@include decal-inside;
+
+			&:hover {
+				background: var(--mid-colour);
+			}
+		}
+	}
+}

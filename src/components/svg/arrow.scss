@@ -1,0 +1,14 @@
+.app {
+	.arrow,
+	.arrow path {
+		transition: fill 0.6s ease;
+
+		path {
+			fill: var(--low-colour);
+		}
+
+		&:hover path {
+			fill: var(--high-colour);
+		}
+	}
+}

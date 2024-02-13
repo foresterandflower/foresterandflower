@@ -1,0 +1,54 @@
+@import '../../sass.scss';
+
+nav {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	gap: var(--space-single);
+	z-index: 20;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 6rem;
+	background: var(--base-colour);
+	border-top: var(--main-border);
+
+	@media screen and (min-width: $tablet) {
+		justify-content: center;
+		gap: calc(var(--space-double) * 2);
+		position: sticky;
+		top: 0;
+		border-top: none;
+      	border-bottom: var(--main-border);
+	}
+
+	.item {
+		display: inline-block;
+		position: relative;
+		margin: 0;
+	}
+
+	a {
+		@include anchor(0.2rem, var(--fade-colour), var(--line-colour));
+		font-family: var(--title-font);
+		font-size: 1.8rem;
+		text-transform: capitalize;
+
+		&:not(:hover) {
+			&::after {
+				background-color: var(--line-colour);
+			}
+		}
+
+		@media screen and (min-width: $tablet) {
+			font-size: 2rem;
+
+			&:not(:hover) {
+				&::after {
+					background-color: var(--low-colour);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+.switch {
+	position: absolute;
+	top: var(--space-single);
+	right: var(--space-single);
+	width: var(--space-single);
+	height: var(--space-single);
+	background: var(--mid-colour);
+	border-radius: 100%;
+}
+
+.app {
+  &.light {
+		.switch {
+			background: var(--mid-colour);
+		}
+	}
+}
